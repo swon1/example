@@ -8,15 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no, address=no, email=no">
 
-    <link rel="shortcut icon" href="/example/resource/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/example/resource/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="resource/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="resource/images/favicon.ico" type="image/x-icon">
 
     <title>:: EX</title>
 
     <link rel="stylesheet" href="resource/css/reset.css">
     <link rel="stylesheet" href="resource/css/style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <script type="text/javascript" src="resource/js/jquery-3.3.1.min.js"></script>
     <!-- <script type="text/javascript" src="resource/js/jqueryEasing.js"></script> -->
@@ -29,6 +29,7 @@
     <div class="wrap box100" id="wrap">
         <header id="header">
             <h2>EXAMPLE</h2>
+            <button type="button" class="btn-reload"><span class="material-symbols-outlined">refresh</span></button>
         </header>
         <main id="main" class="box100">
             <section id="section" class="box100">
@@ -70,6 +71,14 @@
             <p>HWANG SEUNGWON EXAMPLE PAGE</p>
         </footer>
     </div>
+    <script type="text/javascript">
+        (function(a){
+            let $reload = a.querySelector('.btn-reload');
+            $reload.addEventListener('click', () => {
+                window.location.reload();
+            });
+        })(document);
+    </script>
 </body>
 
 </html>

@@ -47,6 +47,18 @@ body {
   letter-spacing: 1px;
   margin-left: 5px;
 }
+#header .btn-reload {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: #fff;
+  cursor: pointer;
+}
+#header .btn-reload span {
+  cursor: pointer;
+}
 
 #footer {
   position: absolute;
@@ -151,7 +163,7 @@ body {
 }
 @media (max-width: 750px) {
   #section .section-inner {
-    padding: 75px 5% 0;
+    padding: 50px 5% 0;
   }
   #section .section-inner .content {
     width: 100%;

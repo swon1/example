@@ -48,6 +48,18 @@ body {
             margin-left:5px;
         }
     }
+    .btn-reload {
+        display:block;
+        position:absolute;
+        top:50%;
+        right:20px;
+        transform:translateY(-50%);
+        color:#fff;
+        cursor:pointer;
+        span {
+            cursor:pointer;
+        }
+    }
 }
 #footer {
     position:absolute;
@@ -169,7 +181,7 @@ body {
     #section {
 
         .section-inner {
-            padding:75px 5% 0;
+            padding:50px 5% 0;
             .content {
                 width:100%;
                 margin-bottom:30px;
