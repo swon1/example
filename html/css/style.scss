@@ -27,7 +27,16 @@ body {
     position:absolute;
     bottom:25px;
     right:30px;
+    .btn-reload {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background-color:#222;
+        width:30px;
+        height:30px;
+    }
     span {
+        color:#fff;
         cursor:pointer;
     }
 }
@@ -217,6 +226,10 @@ body {
 @media (max-width:750px) {
     body {
         padding:5px;
+    }
+    .reload-box {
+        bottom:10px;
+        right:15px;
     }
     #main {
         padding:5% 0;
