@@ -208,6 +208,9 @@ body {
   #main .content-img {
     width: 95%;
   }
+  #main .content-img img {
+    width: 100%;
+  }
   #main .content-text {
     width: 95%;
     max-width: none;
