@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>----- note</title>
+</head>
+
+    <!-- 참고 :: https://swiperjs.com/ -->
+
+    <!-- cdn -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+<body>
+
+    <style>
+        * {margin:0;padding:0;box-sizing:border-box;outline:none;}
+        body {width:100%;height:100vh;}
+        #wrap {position:relative;width:100%;height:100%;}
+        .swiper01 {position:absolute;top:50%;left:50%;width:500px;height:400px;margin:-200px 0 0 -250px;overflow:hidden;}
+        /* .swiper-slide {height:calc((100% - 10px) / 2);} */
+    </style>
+    
+    <div id="wrap">
+
+        <!-- 슬라이드 메인 컨테이너 -->
+        <div class="swiper01"> <!-- dir="rtl" :: 우측에서 좌쪽으로 -->
+
+            <!-- 추가 필수 Wrapper -->
+            <div class="swiper-wrapper">
+                <!-- 슬라이드 유닛 -->
+                <div class="swiper-slide" style="background-color:red;"></div>
+                <div class="swiper-slide" style="background-color:orange;"></div>
+                <div class="swiper-slide" style="background-color:yellow;"></div>
+                <div class="swiper-slide" style="background-color:green;"></div>
+                <div class="swiper-slide" style="background-color:blue;"></div>
+            </div>
+
+            <!-- 페이지네이션(Dots) 사용시 -->
+            <div class="swiper-pagination"></div>
+
+            <!-- 버튼 네비게이터(Arrows) 사용시 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- 스크롤바 네비게이터 사용시 -->
+            <div class="swiper-scrollbar"></div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        (function(a){
+            const swiperbox = a.querySelector('.swiper01'),
+
+                // 기본 형식 :: 다르게 커스텀해서 호출 가능
+                slideSwiper = new Swiper (swiperbox, {
+                    /* API 참고 :: https://swiperjs.com/swiper-api */
+
+                    // 주로 사용하는 옵션
+
+                    direction : "horizontal", // 뱡향 :: 기본값 - horizontal, 세로값 - vertical
+
+                    slidesPerView : 1, // 한번에 보여질 유닛 개수 :: auto 값으로 잘린듯한 표헌 가능, 소수점 단위 가능 EX) 2.5
+
+                    spaceBetween : 10, // 슬라이드 유닛간의 margin값 :: px단위
+
+                    centeredSlides : false, // 센터모드 :: 다중의 슬라이드가 표현될때 사용
+
+                    loop : true, // infinity 슬라이드 효과
+
+                    effect : "cube", // 효과 slide[기본값], fade, cube, coverflow, flip, creative, cards
+
+                    autoplay: { // 오토 플레이
+                        delay: 1500,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter : true,
+
+                        // reverseDirection : true, -- 반대방향으로 자동 플레이
+                    },
+
+                    autoHeight: false, // true로 설정하면 슬라이더 래퍼가 현재 활성 슬라이드의 높이에 맞게 높이를 조정 
+
+                    // 페이지네이션 (dots)
+                    pagination : {
+                        el : ".swiper-pagination", // 적용할 element 값
+
+                        type : "bullets", // 페이지네이션 형식
+                        // bullets -- 도트 형식 :: 기본값
+                        // progressbar -- 프로그레스바 형식
+                        // fraction -- 숫자 형식
+
+                        clickable : true, // 클릭으로 슬라이드 유닛 전환 :: bullets 형식에서 사용
+                        dynamicBullets : false, // acitve 강조표현 :: bullets 형식에서 사용
+                    },
+
+                    // 좌우 제어 네비게이터 (arrows)
+                    navigation : {
+                        nextEl : '.swiper-button-next',
+                        prevEl : '.swiper-button-prev',
+                    },
+
+                    // 스크롤바 네비게이터
+                    scrollbar : {
+                        el : '.swiper-scrollbar',
+                    },
+
+
+
+
+
+                    /* 추가 옵션 ----- */
+
+                    keyboard : { // 키보드 제어
+                        enabled : true,
+                    },
+
+                    mousewheel: true, // 마우스 휠 제어
+
+                    loopFillGroupWithBlank : false, // 그룹수가 맞지 않을 경우 빈칸으로 메우기 :: 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
+
+                    cssMode : false, // 활성화시 최신 CSS Scroll Snap API 사용
+
+                    freeMode : false, // 슬라이드 작동시 위치 고정 제어
+
+                    // 그리드 효과 :: CSS 조절 필요
+                    grid : {
+                        rows : 1,
+                    },
+
+                    grabCursor : false, // grab 형식 커서
+
+
+                    /*
+                    cubeEffect : { // effect :: cube 이펙트 상세 효과
+                        shadow: true,
+                        slideShadows: true,
+                        shadowOffset: 20,
+                        shadowScale: 0.94,
+                    },
+                    coverflowEffect : { // effect :: coverflow 이펙트 상세 효과
+                        rotate: 50,
+                        stretch: 0,
+                        depth: 100,
+                        modifier: 1,
+                        slideShadows: true,
+                    },
+                    creativeEffect : { // effect :: creative 이펙트 상세 효과
+                        prev: {
+                            shadow: true,
+                            origin: "left center",
+                            translate: ["-5%", 0, -200],
+                            rotate: [0, 100, 0],
+                        },
+                        next: {
+                            origin: "right center",
+                            translate: ["5%", 0, -200],
+                            rotate: [0, -100, 0],
+                        },
+                    },
+                    */
+
+                });
+        })(document);
+
+    </script>
+
+</body>
+</html>
