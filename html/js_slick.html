@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/example/resource/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/example/resource/images/favicon.ico" type="image/x-icon">
-    
+
     <title>:: note</title>
 
     <link rel="stylesheet" type="text/css" href="../resource/css/reset.css">
@@ -77,6 +77,7 @@
                 기본 HTML 태그 형태는 위의 이미지 형태이며,
                 여러 옵션으로 추가 태그 생성 및 도트,화살표관리 등 동적 표현이 가능하다.
             </p>
+            <!-- ▼▼▼▼▼ option ▼▼▼▼▼ ▼▼▼▼▼ ▼▼▼▼▼ ▼▼▼▼▼ -->
             <p class="content-text optionT"><strong>■ 주로 사용하는 옵션</strong></p>
             <ul class="content-list">
                 <li class="content-unit"> <!-- unit ----- ----- -->
@@ -229,8 +230,159 @@
                     </div>
                     <p class="slide-text">Ex. <span class="detail">autoplay : true</span></p>
                 </li>
-
-
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">autoplaySpeed</span> : num, 
+                    <p class="unit-text">
+                        자동 재생 시간 제어
+                        <span class="text-default">기본값 : 3000</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-autoSpeed">
+                            <div class="slide">
+                                <div style="background-color:brown;"></div>
+                                <div style="background-color:turquoise;"></div>
+                                <div style="background-color:slategrey;"></div>
+                            </div>
+                        </div>
+                        <img src="images/slick_autospeed.jpg" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">autoplaySpeed : 500</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">pauseOnHover</span> : boolean, 
+                    <p class="unit-text">
+                        마우스 hover시 일시정지 유무<br>
+                        autoplay 옵션을 사용할 경우 쓰인다.
+                        <span class="text-default">기본값 : true</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-onHover">
+                            <div class="slide">
+                                <div style="background-color:crimson;"></div>
+                                <div style="background-color:cornflowerblue;"></div>
+                                <div style="background-color:darkkhaki;"></div>
+                            </div>
+                        </div>
+                        <img src="images/slick_onhover.jpg" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">pauseOnHover : false</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">pauseOnFocus</span> : boolean, 
+                    <p class="unit-text">
+                        해당 slide에 포커싱 되었을시 일시정지 유무<br>
+                        autoplay 옵션을 사용할 경우 쓰이며, 포커스가 풀리면 다시 재생된다.
+                        <span class="text-default">기본값 : true</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-onFocus">
+                            <div class="slide">
+                                <div style="background-color:wheat;"></div>
+                                <div style="background-color:thistle;"></div>
+                                <div style="background-color:steelblue;"></div>
+                            </div>
+                        </div>
+                        <img src="images/slick_onfocus.jpg" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">pauseOnFocus : false</span></p>
+                </li>
+            </ul>
+            <!-- ▼▼▼▼▼ option ▼▼▼▼▼ ▼▼▼▼▼ ▼▼▼▼▼ ▼▼▼▼▼ -->
+            <p class="content-text optionS"><strong>■ 추가 옵션 --- 사용 가능 및 편의성 위주</strong></p>
+            <ul class="content-list">
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">swipe</span> : boolean, 
+                    <p class="unit-text">
+                        스와이프 (마우스 드래그, 터치 드래그) 제어<br>
+                        비주얼 영역 및 도트/화살표로 제어되는 슬라이드에서 사용하는 경우가 있다.
+                        <span class="text-default">기본값 : true</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-swipe">
+                            <div class="slide">
+                                <div style="background-color:slateblue;"></div>
+                                <div style="background-color:darkslategrey;"></div>
+                                <div style="background-color:greenyellow;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">swipe : false</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">draggable</span> : boolean, 
+                    <p class="unit-text">
+                        마우스 드래그 효과 제어<br>
+                        모바일은 터치 이벤트로 인식하기 때문에 해당이 안된다.
+                        <span class="text-default">기본값 : true</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-drag">
+                            <div class="slide">
+                                <div style="background-color:tan;"></div>
+                                <div style="background-color:salmon;"></div>
+                                <div style="background-color:midnightblue;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">draggable : false</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">touchMove</span> : boolean, 
+                    <p class="unit-text">
+                        터치에 따른 슬라이드 움직임 제어
+                        <span class="text-default">기본값 : true</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-touch">
+                            <div class="slide">
+                                <div style="background-color:aquamarine;"></div>
+                                <div style="background-color:burlywood;"></div>
+                                <div style="background-color:darkred;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">touchMove : false</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">touchThreshold</span> : num, 
+                    <p class="unit-text">
+                        swiper 하여 슬라이드를 전환시 요소 넓이를 1 / touchThreshold 이상 슬라이드하여 전환<br>
+                        예제에는 2로 반영해두었는데 그럴 경우 1 / 2 로 설정되어 50% 이상 swiper시 슬라이드 모션
+                        <span class="text-default">기본값 : 5</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-touchHold">
+                            <div class="slide">
+                                <div style="background-color:darkorange;"></div>
+                                <div style="background-color:yellowgreen;"></div>
+                                <div style="background-color:tomato;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">touchThreshold : 2</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">pauseOnDotsHover</span> : boolean, 
+                    <p class="unit-text">
+                        슬라이드 페이지네이션(도트) hover 일시정지 유무
+                        <span class="text-default">기본값 : false</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-onDots">
+                            <div class="slide">
+                                <div style="background-color:thistle;"></div>
+                                <div style="background-color:cornflowerblue;"></div>
+                                <div style="background-color:darkolivegreen;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">pauseOnDotsHover : true</span></p>
+                </li>
 
 
                 <li class="content-unit"> <!-- unit ----- ----- -->
@@ -244,30 +396,11 @@
                                 <div style="background-color:rgba(255,150,0,0.85);"></div>
                             </div>
                         </div>
+                        <img src="" alt="" class="ex-img">
                     </div>
                     <p class="slide-text">Ex. <span class="detail"></span></p>
                 </li>
-                <li class="content-unit">
-                    - autoplaySpeed : 500, // 자동 플레이 시간 제어
-
-                    - pauseOnHover : false, // 마우스 hover시 일시정지 유무
-
-                    - pauseOnFocus : false, // 해당 slide에 포커싱 되었을시 일시정지 유무
-
-
-
-
-
-                    /* 추가 옵션 ----- 사용 가능 및 편의성 위주 */
-
-                    swipe : true, // 스와이프 (마우스 드래그, 터치 드래그) 제어
-                    draggable : true, // drag 효과 제어
-
-                    touchMove : true, // 터치에 따른 슬라이드 움직임 제어 :: 모바일 UI
-                    touchThreshold : 5, // swiper 하여 슬라이드를 전환시 요소 넓이를 1/5 이상 슬라이드하여 전환
-
-                    pauseOnDotsHover : false, // 슬라이드 페이지네이션(도트) hover 일시정지 유무
-
+                <li>
                     centerMode : true, // 센터 모드 제어 :: slideToShow 짝수일 경우 비활성화
                     centerPadding : '50px', // 센터 패딩 제어 :: 센터 모드시 제어 가능
 
@@ -377,6 +510,41 @@
             });
             $('.slide-auto .slide').slick({
                 autoplay : true,
+            });
+            $('.slide-autoSpeed .slide').slick({
+                autoplay : true,
+                autoplaySpeed : 500,
+            });
+            $('.slide-onHover .slide').slick({
+                arrows : false,
+                autoplay : true,
+                pauseOnHover : false,
+            });
+            $('.slide-onFocus .slide').slick({
+                arrows : false,
+                autoplay : true,
+                pauseOnHover : false,
+                pauseOnFocus : false,
+            });
+
+            $('.slide-swipe .slide').slick({
+                swipe : false,
+            });
+            $('.slide-drag .slide').slick({
+                draggable : false,
+            });
+            $('.slide-touch .slide').slick({
+                touchMove : false,
+            });
+            $('.slide-touchHold .slide').slick({
+                touchThreshold : 2,
+            });
+            $('.slide-onDots .slide').slick({
+                arrows : false,
+                dots : true,
+                autoplay : true,
+                autoplaySpeed : 550,
+                pauseOnDotsHover : true,
             });
 
 

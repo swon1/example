@@ -60,6 +60,12 @@ body {
         &.optionT {
             margin:100px auto 20px;
         }
+        &.optionS {
+            margin:80px auto 10px;
+            strong {
+                font-size:14px;
+            }
+        }
     }
     .content-list {
         width:100%;
@@ -221,6 +227,9 @@ body {
             max-width:none;
             &.optionT {
                 margin:15% auto 2%;
+            }
+            &.optionS {
+                margin:11% auto 2%;
             }
         }
         .content-list {
