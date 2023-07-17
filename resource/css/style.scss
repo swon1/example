@@ -52,12 +52,16 @@ body {
         display:block;
         position:absolute;
         top:50%;
-        right:20px;
+        right:0;
         transform:translateY(-50%);
+        width:50px;
+        height:100%;
         color:#fff;
         cursor:pointer;
         span {
             cursor:pointer;
+            font-size:20px;
+            line-height:1.5;
         }
     }
 }

@@ -385,7 +385,100 @@
                     </div>
                     <p class="slide-text">Ex. <span class="detail">pauseOnDotsHover : true</span></p>
                 </li>
-                
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">centerMode</span> : boolean, 
+                    <p class="unit-text">
+                        중앙 슬라이드 활성화 : slideToShow 짝수일 경우 비활성화
+                        <span class="text-default">기본값 : false</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-center">
+                            <div class="slide">
+                                <div style="background-color:skyblue;"></div>
+                                <div style="background-color:steelblue;"></div>
+                                <div style="background-color:thistle;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">centerMode : true</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">centerPadding</span> : num, 
+                    <p class="unit-text">
+                        센터 패딩 제어 :: 센터 모드시 제어 가능
+                        <span class="text-default">기본값 : 50</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-centerP">
+                            <div class="slide">
+                                <div style="background-color:wheat;"></div>
+                                <div style="background-color:teal;"></div>
+                                <div style="background-color:plum;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">centerPadding : 30</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">adaptiveHeight</span> : boolean, 
+                    <p class="unit-text">
+                        높이값이 다른 슬라이드를 현재 활성화된 슬라이드에 맞춤
+                        <span class="text-default">기본값 : false</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-adaptiveH">
+                            <div class="slide">
+                                <div style="background-color:deepskyblue;height:80px;"></div>
+                                <div style="background-color:forestgreen;height:70px;"></div>
+                                <div style="background-color:gainsboro;height:80px;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">adaptiveHeight : true</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">cssEase</span> : string, 
+                    <p class="unit-text">
+                        css easing 효과 커스터마이징
+                        <span class="text-default">기본값 : 'ease'</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-cssEase">
+                            <div class="slide">
+                                <div style="background-color:cadetblue;"></div>
+                                <div style="background-color:darkolivegreen;"></div>
+                                <div style="background-color:tomato;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">cssEase : 'cubic-bezier(0.34, 1.56, 0.64, 1)'</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">mobileFirst</span> : boolean, 
+                    <p class="unit-text">
+                        mobile 일때 responsive 제어<br>
+                        breakpoint를 기준으로<br>
+                        mobileFirst : false - 창 너비가 breakpoint보다 작은지 여부를 결정<br>
+                        mobileFirst : true - 창 너비가 breakpoint보다 큰지 여부를 결정<br>
+                        <span class="text-default">기본값 : false</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-mobileF">
+                            <div class="slide">
+                                <div style="background-color:crimson;"></div>
+                                <div style="background-color:teal;"></div>
+                                <div style="background-color:slateblue;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">mobileFirst : true</span></p>
+                </li>
+
 
 
                 <li class="content-unit"> <!-- unit ----- ----- -->
@@ -404,15 +497,6 @@
                     <p class="slide-text">Ex. <span class="detail"></span></p>
                 </li>
                 <li>
-                    centerMode : true, // 센터 모드 제어 :: slideToShow 짝수일 경우 비활성화
-                    centerPadding : '50px', // 센터 패딩 제어 :: 센터 모드시 제어 가능
-
-                    adaptiveHeight : true, // 높이값이 다른 슬라이드를 현재 활성화된 슬라이드에 맞춤
-
-                    cssEase : 'ease', // css ease 효과 커스터마이징
-                    easing : 'swing', // ease 효과 커스터마이징
-
-                    mobileFirst : false, // mobile 일때 responsive 제어
 
                     initialSlide : 2, // 처음 보여지는 unit 설정 :: 0 에서부터 index
 
@@ -470,6 +554,8 @@
                     zIndex : 1000, // 슬라이드의 z-index 값을 설정 :: IE9 이하의 브라우저에서 유용 현재는 사용하지않아도 무관
                 </li>
             </ul>
+            <!-- ▼▼▼▼▼ option ▼▼▼▼▼ ▼▼▼▼▼ ▼▼▼▼▼ ▼▼▼▼▼ -->
+            <p class="content-text optionS"><strong>■ 이벤트, 메소드 - 주로 사용하는 옵션 위주</strong></p>
         </main>
         <aside class="reload-box">
             <button type="button" class="btn-reload"><span class="material-symbols-outlined">refresh</span></button>
@@ -556,6 +642,23 @@
                 autoplay : true,
                 autoplaySpeed : 550,
                 pauseOnDotsHover : true,
+            });
+            $('.slide-center .slide').slick({
+                centerMode : true,
+            });
+            $('.slide-centerP .slide').slick({
+                centerMode : true,
+                centerPadding : '30px',
+            });
+            $('.slide-adaptiveH .slide').slick({
+                centerMode : true,
+                adaptiveHeight : true,
+            });
+            $('.slide-cssEase .slide').slick({
+                cssEase : 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+            });
+            $('.slide-mobileF .slide').slick({
+                mobileFirst : true,
             });
 
 
