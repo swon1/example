@@ -478,80 +478,216 @@
                     </div>
                     <p class="slide-text">Ex. <span class="detail">mobileFirst : true</span></p>
                 </li>
-
-
-
                 <li class="content-unit"> <!-- unit ----- ----- -->
-                    - <span class="option"></span> : num, 
+                    - <span class="option">initialSlide</span> : num, 
                     <p class="unit-text">
-                        <span class="text-default"></span>
+                        처음 보여지는 unit 설정 - 0 에서부터 index
+                        <span class="text-default">기본값 : 0</span>
                     </p>
                     <div class="ex-unit">
-                        <div class="unitSlide slide-">
+                        <div class="unitSlide slide-initial">
                             <div class="slide">
-                                <div style="background-color:rgba(255,150,0,0.85);"></div>
+                                <div style="background-color:springgreen;"></div>
+                                <div style="background-color:silver;"></div>
+                                <div style="background-color:darkred;"></div>
+                                <div style="background-color:indigo;"></div>
                             </div>
                         </div>
                         <img src="" alt="" class="ex-img">
                     </div>
-                    <p class="slide-text">Ex. <span class="detail"></span></p>
+                    <p class="slide-text">Ex. <span class="detail">initialSlide : 2</span></p>
                 </li>
-                <li>
-
-                    initialSlide : 2, // 처음 보여지는 unit 설정 :: 0 에서부터 index
-
-                    waitForAnimate : true, // 애니메이션 활성화시 동작 제어
-
-                    dotsClass : `slick-dots slide-page-dot`, // dot 부모 ul class 제어 :: slick-dots 는 기본값
-
-                    // nextArrow : '<div class="nextButton"></div>' -- 우측 제어 버튼 커스터마이징
-                    // prevArrow : '<div class="prevButton"></div>' -- 좌측 제어 버튼 커스터마이징
-
-                    // rtl : true, -- 슬라이드 제어 방향을 오른쪽에서 왼쪽으로
-
-                    useCSS : true, // CSS Transitions 활성화/비활성화
-                    useTransform : true, // CSS Transforms 활성화/비활성화
-
-                    vertical : false, // 세로방향 슬라이드
-                    verticalSwiping : false, // 수평인 스와이프 방향을 변경 :: true값일 경우 세로로 변경
-
-                    responsive : [ // 반응형 제어 :: breakpoint - 반응형 구간, settings - 구간에 따른 설정 변경
-                        {
-                            breakpoint : 1200,
-                            settings : {
-                                fade : false,
-                            }
-                        },
-                        {
-                            breakpoint : 375,
-                            settings : {
-                                fade : true,
-                            }
-                        }
-                    ],
-
-
-                    accessibility : true, // 접근성
-                    asNavFor : '', // 동기화 :: 2개 이상 제어시 사용
-
-                    /* 커스터마이징 페이지네이션 - dots : true 필요
-                    customPaging: function (slider, i) {
-                        console.log(slider.$slider[0]);
-                        아래 마크업처럼 적용할 버튼들의 마크업을 대입
-
-                        slick내부에서 슬라이드 개수 만큼 for문으로 생성 ( 슬라이드 개수 만큼 복제 )
-                        return '<div class="slide-banner">' + ' <div class="bn-item">' + (i+1) + '</div>' + '</div>';
-                    }
-                    */
-
-                    edgeFriction : 0.15, // 슬라이드 가장자리를 넘길때의 저항값 지정
-
-                    focusOnSelect : false, // 선택한 요소에 focus 여부 :: click
-                    focusOnChange : false, // 클릭하여 선택한 요소에 초점 제어
-
-                    variableWidth : false, // 슬라이드 너비 자동계산을 비활성화, true 값일 경우 활성화되어 자동으로 맞춘 슬라이드 너비가 해제
-
-                    zIndex : 1000, // 슬라이드의 z-index 값을 설정 :: IE9 이하의 브라우저에서 유용 현재는 사용하지않아도 무관
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">waitForAnimate</span> : boolean, 
+                    <p class="unit-text">
+                        애니메이션 활성화시 동작 제어<br>
+                        jQuery의 stop와 유사한 기능
+                        <span class="text-default">기본값 : true</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-animate">
+                            <div class="slide">
+                                <div style="background-color:wheat;"></div>
+                                <div style="background-color:turquoise;"></div>
+                                <div style="background-color:tomato;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">waitForAnimate : false</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">dotsClass</span> : string, 
+                    <p class="unit-text">
+                        도트 부모 ul class 제어
+                        <span class="text-default">기본값 : 'slick-dots'</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-dotsClass">
+                            <div class="slide">
+                                <div style="background-color:crimson;"></div>
+                                <div style="background-color:darkblue;"></div>
+                                <div style="background-color:darkslateblue;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">dotsClass : 'slick-dots slick-dots-box'</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">rtl</span> : boolean, 
+                    <p class="unit-text">
+                        슬라이드 제어 방향을 오른쪽에서 왼쪽으로
+                        <span class="text-default">기본값 : false</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-rtl">
+                            <div class="slide">
+                                <div style="background-color:crimson;"></div>
+                                <div style="background-color:darkslateblue;"></div>
+                                <div style="background-color:darkkhaki;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">rtl : true</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">useCSS</span> : boolean, 
+                    <p class="unit-text">
+                        CSS Transitions 활성화/비활성화
+                        <span class="text-default">기본값 : true</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-useCSS">
+                            <div class="slide">
+                                <div style="background-color:slategrey;"></div>
+                                <div style="background-color:cornflowerblue;"></div>
+                                <div style="background-color:darkseagreen;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">useCSS : false</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">useTransform</span> : boolean, 
+                    <p class="unit-text">
+                        CSS Transforms 활성화/비활성화
+                        <span class="text-default">기본값 : true</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-useTrans">
+                            <div class="slide">
+                                <div style="background-color:crimson;"></div>
+                                <div style="background-color:darkslateblue;"></div>
+                                <div style="background-color:darkkhaki;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">useTransform : false</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">vertical</span> : boolean, 
+                    <p class="unit-text">
+                        세로(수직 )방향 슬라이드
+                        <span class="text-default">기본값 : false</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-vertical">
+                            <div class="slide">
+                                <div style="background-color:slategrey;"></div>
+                                <div style="background-color:cornflowerblue;"></div>
+                                <div style="background-color:darkseagreen;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">vertical : true</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">verticalSwiping</span> : boolean, 
+                    <p class="unit-text">
+                        수평인 스와이프 방향을 변경 - true값일 경우 수직으로 변경
+                        <span class="text-default">기본값 : false</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-verticalS">
+                            <div class="slide">
+                                <div style="background-color:crimson;"></div>
+                                <div style="background-color:darkslateblue;"></div>
+                                <div style="background-color:darkkhaki;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">verticalSwiping : true</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">responsive</span> : object, 
+                    <p class="unit-text">
+                        반응형 제어 : breakpoint - 반응형 구간, settings - 구간에 따른 설정
+                        <span class="text-default">기본값 : none</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-responsive">
+                            <div class="slide">
+                                <div style="background-color:slategrey;"></div>
+                                <div style="background-color:cornflowerblue;"></div>
+                                <div style="background-color:darkseagreen;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. 
+                        <span class="detail">
+                            responsive : [
+                                {
+                                    breakpoint : 750,
+                                    settings : {
+                                        fade : true,
+                                    }
+                                },
+                            ],
+                        </span>
+                    </p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">asNavFor</span> : string, 
+                    <p class="unit-text">
+                        동기화 - 2개 이상 제어시 사용
+                        <span class="text-default">기본값 : null</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-asN">
+                            <div class="slide">
+                                <div style="background-color:crimson;"></div>
+                                <div style="background-color:darkslateblue;"></div>
+                                <div style="background-color:darkkhaki;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">asNavFor : $('.slide-responsive .slide')</span></p>
+                </li>
+                <li class="content-unit"> <!-- unit ----- ----- -->
+                    - <span class="option">edgeFriction</span> : integer, 
+                    <p class="unit-text">
+                        슬라이드 가장자리를 넘길때의 저항값 지정
+                        <span class="text-default">기본값 : 0.15</span>
+                    </p>
+                    <div class="ex-unit">
+                        <div class="unitSlide slide-edgeF">
+                            <div class="slide">
+                                <div style="background-color:slategrey;"></div>
+                                <div style="background-color:cornflowerblue;"></div>
+                                <div style="background-color:darkseagreen;"></div>
+                            </div>
+                        </div>
+                        <img src="" alt="" class="ex-img">
+                    </div>
+                    <p class="slide-text">Ex. <span class="detail">edgeFriction : 0.75</span></p>
                 </li>
             </ul>
             <!-- ▼▼▼▼▼ option ▼▼▼▼▼ ▼▼▼▼▼ ▼▼▼▼▼ ▼▼▼▼▼ -->
@@ -624,6 +760,8 @@
                 pauseOnFocus : false,
             });
 
+
+
             $('.slide-swipe .slide').slick({
                 swipe : false,
             });
@@ -659,6 +797,54 @@
             });
             $('.slide-mobileF .slide').slick({
                 mobileFirst : true,
+            });
+            $('.slide-initial .slide').slick({
+                dots : true,
+                infinite : false,
+                initialSlide : 2,
+            });
+            $('.slide-animate .slide').slick({
+                waitForAnimate : false,
+            });
+            $('.slide-dotsClass .slide').slick({
+                dots : true,
+                dotsClass : 'slick-dots slick-dots-box',
+            });
+            $('.slide-rtl .slide').slick({
+                rtl : true,
+                autoplay : true,
+                autoplaySpeed : 300,
+            });
+            $('.slide-useCSS .slide').slick({
+                useCSS : false,
+            });
+            $('.slide-useTrans .slide').slick({
+                useTransform : false,
+            });
+            $('.slide-vertical .slide').slick({
+                vertical : true,
+            });
+            $('.slide-verticalS .slide').slick({
+                vertical : true,
+                verticalSwiping : true,
+            });
+            $('.slide-responsive .slide').slick({
+                asNavFor : $('.slide-asN .slide'),
+                responsive : [
+                    {
+                        breakpoint : 750,
+                        settings : {
+                            fade : true,
+                        }
+                    },
+                ],
+            });
+            $('.slide-asN .slide').slick({
+                asNavFor : $('.slide-responsive .slide'),
+            });
+            $('.slide-edgeF .slide').slick({
+                infinite : false,
+                edgeFriction : 0.75
             });
 
 
