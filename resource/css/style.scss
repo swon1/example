@@ -144,8 +144,8 @@ body {
                 }
                 .use {
                     position:absolute;
-                    bottom:0;
-                    right:3px;
+                    bottom:3px;
+                    right:6px;
                 }
                 a {
                     position:absolute;
@@ -157,7 +157,7 @@ body {
                     font-size:0;
                     text-indent:-9999px;
                     outline:none;
-                    transition:.75s;
+                    transition:.33s;
                     z-index:2;
                     &:hover {
                         background-color:rgba(0,0,0,0.15);

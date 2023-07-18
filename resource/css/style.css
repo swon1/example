@@ -137,8 +137,8 @@ body {
 }
 #section .section-inner .content .content-inner .use {
   position: absolute;
-  bottom: 0;
-  right: 3px;
+  bottom: 3px;
+  right: 6px;
 }
 #section .section-inner .content .content-inner a {
   position: absolute;
@@ -150,7 +150,7 @@ body {
   font-size: 0;
   text-indent: -9999px;
   outline: none;
-  transition: 0.75s;
+  transition: 0.33s;
   z-index: 2;
 }
 #section .section-inner .content .content-inner a:hover {
