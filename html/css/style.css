@@ -92,7 +92,7 @@ body {
 #main .content-box {
   width: 100%;
   max-width: 650px;
-  margin: 100px auto 0;
+  margin: 50px auto 0;
 }
 #main .content-box.flex-clear {
   display: block;
@@ -329,6 +329,10 @@ body {
   #main .content-text.optionS {
     margin: 11% auto 2%;
   }
+  #main .content-box {
+    width: 95%;
+    margin: 12.5% auto 0;
+  }
   #main .content-list {
     width: 95%;
     max-width: none;
@@ -345,6 +349,22 @@ body {
   #main .slick.slick01 {
     width: 95%;
     height: 200px;
+  }
+  #main .bg-copy-box .bg-copy-unit {
+    width: 21%;
+    height: 0;
+    padding-top: 21%;
+  }
+  #main .bg-copy-box .bg-copy-place {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 50px;
+  }
+  #main .bg-copy-box .bg-copy-text {
+    width: 90%;
+    height: 40px;
+    line-height: 39px;
+    box-shadow: none;
   }
 }
 

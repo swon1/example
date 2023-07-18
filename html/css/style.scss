@@ -88,7 +88,7 @@ body {
     .content-box {
         width:100%;
         max-width:650px;
-        margin:100px auto 0;
+        margin:50px auto 0;
         &.flex-clear {
             display:block;
         }
@@ -332,6 +332,10 @@ body {
                 margin:11% auto 2%;
             }
         }
+        .content-box {
+            width:95%;
+            margin:12.5% auto 0;
+        }
         .content-list {
             width:95%;
             max-width:none;
@@ -350,6 +354,24 @@ body {
             &.slick01 {
                 width:95%;
                 height:200px;
+            }
+        }
+        .bg-copy-box {
+            .bg-copy-unit {
+                width:21%;
+                height:0;
+                padding-top:21%;
+            }
+            .bg-copy-place {
+                width:120px;
+                height:120px;
+                margin:0 auto 50px;
+            }
+            .bg-copy-text {
+                width:90%;
+                height:40px;
+                line-height:39px;
+                box-shadow:none;
             }
         }
     }
