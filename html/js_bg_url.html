@@ -39,8 +39,14 @@
             </p>
             <figure class="content-img">
                 <img src="images/bg_01.jpg" alt="">
+                <img src="images/bg_02.jpg" alt="">
                 <figcaption>▲ 페이지에 적용된 코드</figcaption>
             </figure>
+            <p class="content-text">
+                'background-image' 값 자체를 가져오는건 'getPropertyValue' 를 활용하면 충분하지만
+                uri('') 부분을 제외한 순수 경로 (ex. https://www.google.com) 를 가져오기 위해 replace를 사용한다.
+            </p>
+            <p class="content-text optionT"><strong>■ EX</strong></p>
             <div class="content-box bg-copy-box flex-clear">
                 <span class="bg-copy-place"></span>
                 <p class="bg-copy-text"></p>
@@ -64,7 +70,6 @@
     <script type="text/javascript">
         (function(a){
             let $el = {
-                url : a.querySelectorAll('.bg-copy-unit'),
                 btn : a.querySelectorAll('.bg-copy-btn'),
             };
 
@@ -75,10 +80,18 @@
                     $bg01 = $styleL.backgroundImage,
                     $bg02 = $bg01.replace(/^url\(['"](.+)['"]\)/, '$1');
 
+                    let $bg03 = getComputedStyle($p).getPropertyValue('background-image');
+
+                    let $bg04 = getComputedStyle($p).getPropertyValue('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
+
                     let $bgBox = a.querySelector('.bg-copy-place');
                     let $bgText = a.querySelector('.bg-copy-text');
                     $bgBox.style.backgroundImage = `url('${$bg02}')`;
                     $bgText.innerHTML = `${$bg02}`;
+
+                    console.log($bg02);
+                    console.log($bg03);
+                    console.log($bg04);
                 });
             });
         })(document);
