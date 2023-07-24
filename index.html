@@ -45,7 +45,7 @@
                         </div>
                     </article>
                     <article class="content"> <!-- :: Swiper :: -->
-                        <div class="content-inner">
+                        <div class="content-inner before">
                             <h3><span class="flag-js">JS</span>Swiper Slide Ex</h3>
                             <p class="content-text">
                                 스와이퍼 플러그인에 대한 공부
@@ -106,6 +106,13 @@
             let $reload = a.querySelector('.btn-reload');
             $reload.addEventListener('click', () => {
                 window.location.reload();
+            });
+            let conBox = a.querySelectorAll('.content .content-inner');
+            [].forEach.call( conBox, ( el ) => {
+                el.addEventListener('click',function(e){
+                    e.preventDefault();
+                    alert('아직 작업 전입니다.');
+                });
             });
         })(document);
     </script>
