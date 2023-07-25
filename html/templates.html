@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <link rel="shortcut icon" href="../resource/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../resource/images/favicon.ico" type="image/x-icon">
+
+    <title>:: text</title>
+
+    <link rel="stylesheet" type="text/css" href="../resource/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="../resource/js/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body>
@@ -22,6 +35,12 @@
                 <img src="" alt="">
                 <figcaption></figcaption>
             </figure>
+            <button class="content-console-btn" data-target="content-console">console view</button>
+            <div class="content-console">
+                <div class="console-inner">
+                    <img src="" alt="">
+                </div>
+            </div>
             <div class="content-box">
                 
             </div>
@@ -29,7 +48,20 @@
     </div>
     <script type="text/javascript">
         (function(a){
+            // console box toggle
+            let $console = a.querySelector('.content-console-btn');
+            const viewConsole = ( t ) => {
+                let targetData = (t.target).getAttribute('data-target');
+                let $target = a.querySelector(`.${targetData}`);
+                let $targetH = $target.childNodes[1].offsetHeight;
 
+                if ( ($target.offsetHeight) == 0 ) {
+                    $target.style.height = `${$targetH}px`;    
+                } else {
+                    $target.style.height = `0px`;
+                }
+            };
+            $console.addEventListener('click',viewConsole);
         })(document);
     </script>
 

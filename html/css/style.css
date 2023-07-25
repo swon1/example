@@ -73,6 +73,37 @@ body {
 #main .content-img img:first-child {
   margin: 0 auto;
 }
+#main .content-img figcaption {
+  margin-top: 5px;
+}
+#main .content-console-btn {
+  display: block;
+  font-family: "Nanum Myeongjo";
+  font-size: 12px;
+  width: 100px;
+  padding: 5px 0;
+  margin: 25px auto 10px;
+}
+#main .content-console {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 0;
+  transition: 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  margin: 0 auto;
+  overflow: hidden;
+}
+#main .content-console .console-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 15px 0;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 15px inset rgba(0, 0, 0, 0.1);
+}
 #main .content-text-c {
   text-align: center;
   margin-top: 50px;
@@ -296,6 +327,28 @@ body {
   box-shadow: 0px 0px 5px inset rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.33);
   margin: 0 auto;
+}
+#main .onePage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#main .onePage > div {
+  width: 49%;
+  height: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+#main .onePage > div.pageA {
+  position: relative;
+}
+#main .onePage > div.pageA .page-unit {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.65s cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 @media (max-width: 750px) {

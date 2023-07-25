@@ -76,12 +76,13 @@
                     </article>
                     <article class="content"> <!-- ::  :: -->
                         <div class="content-inner">
-                            <h3><span></span></h3>
+                            <h3><span class="flag-js">JS</span>One Page</h3>
                             <p class="content-text">
-                                
+                                원 페이지 스크롤 구현하기<br>
+                                (Full Page)
                             </p>
-                            <p class="use"></p>
-                            <a href="javascript:void(0)" target="_blank" title="View">view</a>
+                            <p class="use">HTML, CSS, JavaScript, jQuery</p>
+                            <a href="html/js_one_page.html" target="_blank" title="View">view</a>
                         </div>
                     </article>
                     <article class="content"> <!-- ::  :: -->
@@ -107,11 +108,17 @@
             $reload.addEventListener('click', () => {
                 window.location.reload();
             });
+
             let conBox = a.querySelectorAll('.content .content-inner');
             [].forEach.call( conBox, ( el ) => {
                 el.addEventListener('click',function(e){
-                    e.preventDefault();
-                    alert('아직 작업 전입니다.');
+                    let $this = this.classList.contains('before');
+                    if ( !($this) ) {
+                        return false;
+                    } else {
+                        e.preventDefault();
+                        alert('아직 작업 전입니다.');
+                    }
                 });
             });
         })(document);

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <link rel="shortcut icon" href="../resource/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../resource/images/favicon.ico" type="image/x-icon">
+
+    <title>:: Js Scroll Page</title>
+
+    <link rel="stylesheet" type="text/css" href="../resource/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="../resource/js/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<body>
+    
+    <h1 class="hide">JavaScript One Page (Fullpage)</h1>
+    <div id="wrap">
+        <main id="main">
+            <h2><span>Js One Page </span></h2>
+            <p class="content-text-c">
+                JavaScript One Page 구현하기 ( Full Page )
+            </p>
+            <p class="content-text">
+                홈페이지들을 방문하다보면 가끔 마우스휠 한번에 한 섹션씩 횡단하는 페이지들을 볼 수 있다.
+                오늘은 그 마우스휠을 이용한 페이지 횡단을 구현해보자 한다.
+
+                페럴랙스와는 다르지만 작업에 따라 비슷하거나 더 세련되고 높은 퍼포먼스를 보일수도 있다.
+
+                이 예제는 이벤트 객체를 활용할 줄 안다면 쉽게 이해 가능하다.
+            </p>
+            <figure class="content-img">
+                <img src="images/onepage_01.jpg" alt="">
+                <figcaption>▲ 가장 즁요한 이벤트 객체</figcaption>
+            </figure>
+            <button class="content-console-btn" data-target="content-console">console view</button>
+            <div class="content-console">
+                <div class="console-inner">
+                    <img src="images/onepage_02.jpg" alt="">
+                </div>
+            </div>
+            <p class="content-text">
+                유형은 'Absolute' 처리된 섹션들을 마우스휠로 제어하는 방식이다.
+                때문에 'scroll' 을 사용하지 않고 'wheel' 을 사용한다.
+
+                'wheel' 의 이벤트 객체를 확인해보면 'wheelDelta' 라는 속성이 있는데,
+                해당 속성으로 휠을 내렸는지 올렸는지 확인이 가능하다.
+
+                콘솔에서 'wheel' 이벤트 객체를 확인해보면 속성들을 확인 할 수 있다.
+
+                콘솔에서 확인해보면 'wheelDelta' 속성이 휠을 내리면 -120, 휠을 올리면 120 값으로 나오는것을 볼 수 있다.
+                이 값으로 pageUp, pageDown 함수를 실행한다.
+            </p>
+            <div class="content-box onePage">
+                <div class="pageA">
+                    <div class="page-unit" style="background-color:crimson;"></div>
+                    <div class="page-unit" style="background-color:darkgrey;"></div>
+                    <div class="page-unit" style="background-color:deepskyblue;"></div>
+                    <div class="page-unit" style="background-color:lightgreen;"></div>
+                </div>
+                <div class="pageB"></div>
+            </div>
+        </main>
+    </div>
+    <script type="text/javascript">
+        (function(a){
+            // console box toggle
+            let $console = a.querySelector('.content-console-btn');
+            const viewConsole = ( t ) => {
+                let targetData = (t.target).getAttribute('data-target');
+                let $target = a.querySelector(`.${targetData}`);
+                let $targetH = $target.childNodes[1].offsetHeight;
+
+                if ( ($target.offsetHeight) == 0 ) {
+                    $target.style.height = `${$targetH}px`;    
+                } else {
+                    $target.style.height = `0px`;
+                }
+            };
+            $console.addEventListener('click',viewConsole);
+
+            // Wheel Event One Page
+            const onePage = () => {
+                let boxA = a.querySelectorAll('.pageA .page-unit');
+                let total = boxA.length - 1;
+                let idx = 0;
+                let motion;
+
+                boxA[0].style.top = '0%';
+                let zidx = 4;
+                for ( i = 0; i < (total+1); i++ ) {
+                    boxA[i].style.zIndex = zidx;
+                    zidx--;
+                }
+
+                function pageC () {
+                    Array.prototype.forEach.call( boxA, ( el ) => {
+                        el.addEventListener('wheel', ( event ) => {
+                            event.preventDefault();
+                            let wCheck = event.wheelDelta;
+
+                            // console.log(event);
+                            // console.log(event.wheelDelta);
+
+                            if ( !(motion) ) {
+                                motion = true;
+                                if ( wCheck > 0 ) {
+                                    pageUp();
+                                } else {
+                                    pageDown();
+                                }
+                            } else {
+                                return false;
+                            }
+                        },{ passive : false });
+                    })
+                }
+                function pageUp () {
+                    let preidx = idx;
+                    setTimeout(() => { motion = false; },700);
+                    if ( idx <= 0 ) {
+                        idx = 0;
+                        return false;
+                    } else {
+                        idx--;
+                    }
+                    boxA[preidx].style.top = "70%";
+                    boxA[idx].style.top = "0%";
+                }
+                function pageDown () {
+                    let preidx = idx;
+                    setTimeout(() => { motion = false; },700);
+                    if ( idx >= total ) {
+                        idx = total;
+                        return false;
+                    } else {
+                        idx++;
+                    }
+                    boxA[preidx].style.top = "100%";
+                    boxA[idx].style.top = "0%";
+                }
+                pageC();
+            }
+            onePage();
+
+        })(document);
+    </script>
+
+</body>
+</html>
