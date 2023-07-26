@@ -57,6 +57,11 @@
 
                 콘솔에서 확인해보면 'wheelDelta' 속성이 휠을 내리면 -120, 휠을 올리면 120 값으로 나오는것을 볼 수 있다.
                 이 값으로 pageUp, pageDown 함수를 실행한다.
+
+                모바일은 또 다른데, 모바일은 마우스로 제어하는게 아닌 터치로 제어하기때문에 'touch' 를 사용한다.
+
+                'touch' 의 이벤트 객체는 'wheel' 이랑은 조금 다르기때문에
+                'touchstart', 'touchend' 에서 각각 감지 값을 받아와 pageUp, pageDown 함수를 실행한다.
             </p>
             <div class="content-box onePage">
                 <div class="pageA">
@@ -100,7 +105,35 @@
                     zidx--;
                 }
 
-                function pageC () {
+                function pageUp () {
+                    let preidx = idx;
+                    if ( idx <= 0 ) {
+                        motion = false;
+                        idx = 0;
+                        return false;
+                    } else {
+                        setTimeout(() => { motion = false; },700);
+                        idx--;
+                    }
+                    boxA[preidx].style.top = "70%";
+                    boxA[idx].style.top = "0%";
+                }
+                function pageDown () {
+                    let preidx = idx;
+                    if ( idx >= total ) {
+                        motion = false;
+                        idx = total;
+                        return false;
+                    } else {
+                        setTimeout(() => { motion = false; },700);
+                        idx++;
+                    }
+                    boxA[preidx].style.top = "100%";
+                    boxA[idx].style.top = "0%";
+                }
+
+                // pc Wheel Event
+                function wheelP () {
                     Array.prototype.forEach.call( boxA, ( el ) => {
                         el.addEventListener('wheel', ( event ) => {
                             event.preventDefault();
@@ -122,31 +155,34 @@
                         },{ passive : false });
                     })
                 }
-                function pageUp () {
-                    let preidx = idx;
-                    setTimeout(() => { motion = false; },700);
-                    if ( idx <= 0 ) {
-                        idx = 0;
-                        return false;
-                    } else {
-                        idx--;
-                    }
-                    boxA[preidx].style.top = "70%";
-                    boxA[idx].style.top = "0%";
+
+                // mobile Touch Event
+                function touchP () {
+                    let $touchS, $touchE;
+                    Array.prototype.forEach.call( boxA, ( el ) => {
+                        el.addEventListener('touchstart', ( evt ) => {
+                            evt.preventDefault();
+                            $touchS = evt.touches[0].pageY;
+                        });
+                        el.addEventListener('touchend', ( evt ) => {
+                            evt.preventDefault();
+                            $touchE = evt.changedTouches[0].pageY;
+
+                            if ( !(motion) ) {
+                                motion = true;
+                                if ( $touchS > $touchE ) {
+                                    pageDown();
+                                } else {
+                                    pageUp();
+                                }
+                            } else {
+                                return false;
+                            }
+                        });
+                    });
                 }
-                function pageDown () {
-                    let preidx = idx;
-                    setTimeout(() => { motion = false; },700);
-                    if ( idx >= total ) {
-                        idx = total;
-                        return false;
-                    } else {
-                        idx++;
-                    }
-                    boxA[preidx].style.top = "100%";
-                    boxA[idx].style.top = "0%";
-                }
-                pageC();
+                wheelP();
+                touchP();
             }
             onePage();
 

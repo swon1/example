@@ -76,6 +76,7 @@ body {
         display:block;
         font-family:'Nanum Myeongjo';
         font-size:12px;
+        color:#222;
         width:100px;
         padding:5px 0;
         margin:25px auto 10px;
@@ -98,6 +99,9 @@ body {
             text-align:center;
             border:1px solid rgba(0,0,0,0.25);
             box-shadow:0px 0px 15px inset rgba(0,0,0,0.1);
+            img {
+                width:100%;
+            }
         }
     }
     .content-text-c {
@@ -381,6 +385,13 @@ body {
             img {
                 width:100%;
                 margin:5% auto 2.5%;
+            }
+        }
+        .content-console {
+            width:95%;
+            .console-inner {
+                padding:10px 2.5%;
+                box-shadow:none;
             }
         }
         .content-text {
