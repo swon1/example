@@ -69,6 +69,7 @@ body {
 #main .content-img img {
   display: block;
   margin: 30px auto 10px;
+  pointer-events: none;
 }
 #main .content-img img:first-child {
   margin: 0 auto;
@@ -373,6 +374,58 @@ body {
 }
 #main .onePage .page-nav li.active button {
   background-color: rgb(0, 0, 0);
+}
+#main .find-string ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+#main .find-string ul li {
+  width: 60px;
+  height: 40px;
+  font-size: 11px;
+  line-height: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 10px;
+  transition: 0.33s;
+}
+#main .find-string ul.from li {
+  color: #222;
+  background-color: #fff;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+#main .find-string ul.to li:nth-child(1) {
+  background-color: rgba(255, 0, 0, 0);
+}
+#main .find-string ul.to li:nth-child(1).on {
+  color: #fff;
+  background-color: rgb(255, 0, 0);
+}
+#main .find-string ul.to li:nth-child(2) {
+  background-color: rgba(0, 0, 255, 0);
+}
+#main .find-string ul.to li:nth-child(2).on {
+  color: #fff;
+  background-color: rgb(0, 0, 255);
+}
+#main .find-string ul.to li:nth-child(3) {
+  background-color: rgba(0, 0, 0, 0);
+}
+#main .find-string ul.to li:nth-child(3).on {
+  color: #fff;
+  background-color: rgb(0, 0, 0);
+}
+#main .find-string ul.to li:nth-child(4) {
+  background-color: rgba(125, 125, 125, 0);
+}
+#main .find-string ul.to li:nth-child(4).on {
+  color: #fff;
+  background-color: rgb(125, 125, 125);
 }
 
 @media (max-width: 750px) {

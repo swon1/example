@@ -64,6 +64,7 @@ body {
         img {
             display:block;
             margin:30px auto 10px;
+            pointer-events:none;
             &:first-child {
                 margin:0 auto;
             }
@@ -376,6 +377,67 @@ body {
                 &.active {
                     button {
                         background-color:rgba(0,0,0,1);
+                    }
+                }
+            }
+        }
+    }
+    .find-string {
+        ul {
+            display:flex;
+            flex-wrap:wrap;
+            flex-direction:row;
+            justify-content:center;
+            align-items:flex-start;
+            margin-bottom:50px;
+            li {
+                width:60px;
+                height:40px;
+                font-size:11px;
+                line-height:40px;
+                font-weight:bold;
+                text-align:center;
+                margin:0 10px;
+                transition:0.33s;
+            }
+            &.from {
+                li {
+                    color:#222;
+                    background-color:#fff;
+                    border:1px solid #333;
+                    cursor:pointer;
+                }
+            }
+            &.to {
+                li {
+                    // color:#fff;
+                    &:nth-child(1) {
+                        background-color:rgba(255,0,0,0);
+                        &.on {
+                            color:#fff;
+                            background-color:rgba(255,0,0,1);
+                        }
+                    }
+                    &:nth-child(2) {
+                        background-color:rgba(0,0,255,0);
+                        &.on {
+                            color:#fff;
+                            background-color:rgba(0,0,255,1);
+                        }
+                    }
+                    &:nth-child(3) {
+                        background-color:rgba(0,0,0,0);
+                        &.on {
+                            color:#fff;
+                            background-color:rgba(0,0,0,1);
+                        }
+                    }
+                    &:nth-child(4) {
+                        background-color:rgba(125,125,125,0);
+                        &.on {
+                            color:#fff;
+                            background-color:rgba(125,125,125,1);
+                        }
                     }
                 }
             }

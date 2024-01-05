@@ -29,39 +29,124 @@
                 JavaScript 특정 문자를 포함한 태그 찾기
             </p>
             <p class="content-text">
-                
+                특정 영역을 선택하거나 값을 받아와야 하는 상황이 있을 때가 있다.
+                그럴 경우 영역을 지정하거나 정적이고 특정되어 있다면 쉽게 선택하거나 받아올 수 있지만,
+                유동적이거나 복수의 동일한 영역일 경우 특정 짓기가 어려울 수 있다.
+
+                이전에 이커머스 업무 중 카테고리 내부의 상품을 지정해야 했는데 그때 시스템으로 구현되어 있고 동일한 영역이 복수로 구성되어 있어 상품명으로 그 상품을 지정했었다.
+
+                이번엔 그런 상황들에서 특정 문자를 포함한 영역을 찾는 Js 코드를 작성해 본다.
             </p>
             <figure class="content-img">
-                <img src="" alt="">
-                <figcaption></figcaption>
+                <img src="images/findstring_01.jpg" alt="">
+                <img src="images/findstring_02.jpg" alt="">
+                <img src="images/findstring_03.jpg" alt="">
+                <figcaption>▲ 페이지에 적용된 코드</figcaption>
             </figure>
-            <button class="content-console-btn" data-target="content-console">console view</button>
-            <div class="content-console">
-                <div class="console-inner">
-                    <img src="" alt="">
-                </div>
-            </div>
-            <div class="content-box">
-                
+            <p class="content-text">
+                A 안은 단순하게 내가 찾으려는 문자를 포함하고 있는지 특정 영역의 태그들을 지정해
+                각 태그들이 내포하고 있는 문자들과 비교 후 동일하면 이후 함수를 실행시키게 구성되어 있다.
+
+                B 안은 큰 틀조차 주어지지 않아 페이지 전체에서 확인해야 할 때,
+                주어진 조건 없이 단순 문자로만 대상을 찾아야 할 때 사용을 권장하고
+                '엘리먼트.textContent' 만 체크하면 엘리먼트의 자식에 자식이 보유한 textContent까지 체크하여 body, html 등 상위 태그도 선택된다.
+                때문에 '엘리먼트.childElementCount === 0' 코드로 엘리먼트 본인 소유의 문자인지 체크한다.
+
+                C 안은 jQuery 환경이며 contains(); 함수를 사용하면 훨씬 간단하게 찾을 수 있다.
+            </p>
+            <p class="content-text optionT"><strong>■ EX</strong></p>
+            <div class="content-box find-string">
+                <ul class="findA from">
+                    <li>RED</li>
+                    <li>BLUE</li>
+                    <li>BLACK</li>
+                    <li>GRAY</li>
+                </ul>
+                <ul class="findA to">
+                    <li>RED</li>
+                    <li>BLUE</li>
+                    <li>BLACK</li>
+                    <li>GRAY</li>
+                </ul>
+                <ul class="findB from">
+                    <li>RED2</li>
+                    <li>BLUE2</li>
+                    <li>BLACK2</li>
+                    <li>GRAY2</li>
+                </ul>
+                <ul class="findB to">
+                    <li>RED2</li>
+                    <li>BLUE2</li>
+                    <li>BLACK2</li>
+                    <li>GRAY2</li>
+                </ul>
+                <ul class="findC from">
+                    <li>RED</li>
+                    <li>BLUE</li>
+                    <li>BLACK</li>
+                    <li>GRAY</li>
+                </ul>
+                <ul class="findC to">
+                    <li>RED</li>
+                    <li>BLUE</li>
+                    <li>BLACK</li>
+                    <li>GRAY</li>
+                </ul>
             </div>
         </main>
     </div>
     <script type="text/javascript">
         (function(a){
-            // console box toggle
-            let $console = a.querySelector('.content-console-btn');
-            const viewConsole = ( t ) => {
-                let targetData = (t.target).getAttribute('data-target');
-                let $target = a.querySelector(`.${targetData}`);
-                let $targetH = $target.childNodes[1].offsetHeight;
 
-                if ( ($target.offsetHeight) == 0 ) {
-                    $target.style.height = `${$targetH}px`;
-                } else {
-                    $target.style.height = `0px`;
-                }
+            // A
+            let $elA = a.querySelectorAll('.findA.from li');
+            let $toElA = a.querySelectorAll('.findA.to li');
+
+            [].forEach.call( $elA, ( el ) => {
+                el.addEventListener( 'click', (e) => {
+                    let $text = (e.target).innerText;
+
+                    for ( i=0; i<$toElA.length; i++ ) {
+                        let $text2 = $toElA[i].innerText;
+                        if ( $text == $text2 ) {
+                            findFnA($toElA[i]);
+                        }
+                    }
+                });
+            });
+            const findFnA = ( e ) => {
+                for ( i=0; i<$toElA.length; i++ ) { $toElA[i].classList.remove('on'); }
+                e.classList.add('on');
             };
-            $console.addEventListener('click',viewConsole);
+
+
+            // B
+            let $elB = a.querySelectorAll('.findB.from li');
+            let $toElB = a.querySelectorAll('.findB.to li');
+
+            [].forEach.call( $elB, ( el ) => {
+                el.addEventListener( 'click', (e) => {
+                    let $dataText = (e.target).innerText;
+
+                    a.querySelectorAll('*').forEach( ( ele ) => {
+                        if ( ele.textContent.includes($dataText) && ele.childElementCount === 0 ) {
+                            findFnB(ele);
+                        }
+                    });
+                });
+            });
+            const findFnB = ( e ) => {
+                for ( i=0; i<$toElB.length; i++ ) { $toElB[i].classList.remove('on'); }
+                e.classList.add('on');
+            };
+
+
+            // jQuery
+            $('.findC.from li').on('click', ( e ) => {
+                let $tarT = $(e.target).text();
+                $(`.findC.to li:contains('${$tarT}')`).addClass('on').siblings('li').removeClass('on');
+            });
+
         })(document);
     </script>
 
