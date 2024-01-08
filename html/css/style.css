@@ -427,6 +427,57 @@ body {
   color: #fff;
   background-color: rgb(125, 125, 125);
 }
+#main .get-date dl {
+  margin: 0 auto 20px;
+  width: 200px;
+  font-size: 0;
+}
+#main .get-date dl dt {
+  display: inline-block;
+  border: 1px solid #333;
+  vertical-align: middle;
+}
+#main .get-date dl dt button {
+  display: block;
+  width: 70px;
+  height: 30px;
+  font-size: 12px;
+  transition: 0.35s;
+}
+#main .get-date dl dt button:hover {
+  background-color: #222;
+  color: #fff;
+}
+#main .get-date dl dd {
+  display: inline-block;
+  vertical-align: middle;
+}
+#main .get-date dl dd p {
+  width: 120px;
+  height: 30px;
+  font-size: 12px;
+  font-family: "Fredoka", "Nanum Gothic", sans-serif;
+  line-height: 30px;
+  text-align: right;
+}
+#main .get-date dl.full-date {
+  margin-top: 50px;
+}
+#main .get-date dl.full-date dt {
+  display: block;
+}
+#main .get-date dl.full-date dt button {
+  width: 100%;
+}
+#main .get-date dl.full-date dd {
+  display: block;
+}
+#main .get-date dl.full-date dd p {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
 
 @media (max-width: 750px) {
   body {

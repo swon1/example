@@ -443,6 +443,59 @@ body {
             }
         }
     }
+    .get-date {
+        dl {
+            margin:0 auto 20px;
+            width:200px;
+            font-size:0;
+            dt {
+                display:inline-block;
+                border:1px solid #333;
+                vertical-align:middle;
+                button {
+                    display:block;
+                    width:70px;
+                    height:30px;
+                    font-size:12px;
+                    transition:.35s;
+                    &:hover {
+                        background-color:#222;
+                        color:#fff;
+                    }
+                }
+            }
+            dd {
+                display:inline-block;
+                vertical-align:middle;
+                p {
+                    width:120px;
+                    height:30px;
+                    font-size:12px;
+                    font-family:'Fredoka', 'Nanum Gothic', sans-serif;
+                    line-height:30px;
+                    text-align:right;
+                }
+            }
+            &.full-date {
+                margin-top:50px;
+                dt {
+                    display:block;
+                    button {
+                        width:100%;
+                    }
+                }
+                dd {
+                    display:block;
+                    p {
+                        width:100%;
+                        height:50px;
+                        line-height:50px;
+                        text-align:center;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width:750px) {
