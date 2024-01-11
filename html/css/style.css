@@ -478,6 +478,72 @@ body {
   line-height: 50px;
   text-align: center;
 }
+#main .useFulSite > div {
+  position: relative;
+  width: 100%;
+  padding-bottom: 15px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #333;
+}
+#main .useFulSite > div ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+}
+#main .useFulSite > div ul li {
+  display: block;
+  position: relative;
+  margin-bottom: 25px;
+  border: 1px solid #333;
+  width: 45%;
+  height: 100px;
+}
+#main .useFulSite > div ul li a {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+#main .useFulSite > div ul li a p {
+  position: relative;
+  color: #222;
+  transition: 0.3s;
+  white-space: pre-line;
+}
+#main .useFulSite > div ul li a p span {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#main .useFulSite > div ul li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: #333;
+  transition: 0.22s ease-in-out;
+  z-index: -1;
+}
+#main .useFulSite > div ul li a:hover p {
+  color: #fff;
+}
+#main .useFulSite > div ul li a:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+#main .useFulSite > div ul li * {
+  cursor: pointer;
+}
 
 @media (max-width: 750px) {
   body {
@@ -561,6 +627,9 @@ body {
     height: 40px;
     line-height: 39px;
     box-shadow: none;
+  }
+  #main .useFulSite > div ul li {
+    width: 90%;
   }
 }
 

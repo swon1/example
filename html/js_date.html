@@ -29,16 +29,16 @@
                 JavaScript 를 이용한 현재 날짜, 시각 구하기
             </p>
             <p class="content-text">
-
+                
             </p>
             <figure class="content-img">
-                <img src="" alt="">
+                <img src="images/get_date_01.jpg" alt="">
                 <figcaption></figcaption>
             </figure>
             <button class="content-console-btn" data-target="content-console">console view</button>
             <div class="content-console">
                 <div class="console-inner">
-                    <img src="" alt="">
+                    <img src="images/get_date_02.jpg" alt="">
                 </div>
             </div>
             <p class="content-text">
@@ -96,6 +96,7 @@
 
 
             const fnDate = ( type ) => {
+
                 let today = new Date();
 
                 let year = today.getFullYear();
@@ -105,10 +106,13 @@
                 let min = ('0' + today.getMinutes()).slice(-2);
                 let sec = ('0' + today.getSeconds()).slice(-2);
 
-                let nowDate = parseInt(year+month+day+hour+min+sec);
-                let dateString = year + ' - ' + month  + ' - ' + day + ' - ' + hour + ' - ' + min + ' - ' + sec; //'0000-00-00-00-00-00'
+                let nowDate = parseInt( year + month + day + hour + min + sec );
 
-                console.log( type );
+                // ▼ '0000 - 00 - 00 - 00 - 00 - 00' String
+                let dateString = year + ' - ' + month  + ' - ' + day + ' - ' + hour + ' - ' + min + ' - ' + sec;
+
+                console.log(nowDate);
+                console.log(dateString);
 
                 if ( type == 'Year' ) {
                     a.querySelector('.get-date .year dd p').innerText = `- ${year} 년`;

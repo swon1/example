@@ -114,7 +114,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #section .section-inner .content .content-inner h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 40px;
 }
@@ -128,6 +128,9 @@ body {
 }
 #section .section-inner .content .content-inner h3 span.flag-js {
   background-color: yellow;
+}
+#section .section-inner .content .content-inner h3 span.flag-etc {
+  background-color: palegreen;
 }
 #section .section-inner .content .content-inner .content-text {
   margin: 15px 0 0 15px;

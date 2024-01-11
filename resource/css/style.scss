@@ -119,7 +119,7 @@ body {
 
                 h3 {
                     font: {
-                        size:20px;
+                        size:18px;
                         weight:600;
                     }
                     line-height:40px;
@@ -133,6 +133,9 @@ body {
                         margin-right:15px;
                         &.flag-js {
                             background-color:yellow;
+                        }
+                        &.flag-etc {
+                            background-color:palegreen;
                         }
                     }
                 }
