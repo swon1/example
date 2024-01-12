@@ -56,6 +56,12 @@ body {
             border-bottom:1px solid rgba(0,0,0,0.75);
         }
     }
+    a {
+        color:#222;
+    }
+    button {
+        color:#222;
+    }
     .content-img {
         display:block;
         width:600px;
@@ -102,6 +108,7 @@ body {
             box-shadow:0px 0px 15px inset rgba(0,0,0,0.1);
             img {
                 width:100%;
+                pointer-events:none;
             }
         }
     }
@@ -503,6 +510,9 @@ body {
             padding-bottom:15px;
             margin-bottom:40px;
             border-bottom:1px solid #333;
+            &:last-child {
+                border-bottom:none;
+            }
             ul {
                 display:flex;
                 flex-wrap:wrap;
