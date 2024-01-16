@@ -115,6 +115,32 @@ body {
     .content-text-c {
         text-align:center;
         margin-top:50px;
+        span {
+            display:block;
+            margin-top:5px;
+            a {
+                position:relative;
+                display:inline-block;
+                &::after {
+                    content:'';
+                    display:block;
+                    position:absolute;
+                    bottom:0;
+                    right:0;
+                    width:0;
+                    height:1px;
+                    background:#333;
+                    transition:0.3s;
+                }
+                &:hover {
+                    &::after {
+                        right:auto;
+                        left:0;
+                        width:100%;
+                    }
+                }
+            }
+        }
     }
     .content-text {
         width:100%;

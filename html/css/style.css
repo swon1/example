@@ -120,6 +120,30 @@ body {
   text-align: center;
   margin-top: 50px;
 }
+#main .content-text-c span {
+  display: block;
+  margin-top: 5px;
+}
+#main .content-text-c span a {
+  position: relative;
+  display: inline-block;
+}
+#main .content-text-c span a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background: #333;
+  transition: 0.3s;
+}
+#main .content-text-c span a:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
 #main .content-text {
   width: 100%;
   max-width: 650px;

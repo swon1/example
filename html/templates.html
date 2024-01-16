@@ -55,11 +55,7 @@
                 let $target = a.querySelector(`.${targetData}`);
                 let $targetH = $target.childNodes[1].offsetHeight;
 
-                if ( ($target.offsetHeight) == 0 ) {
-                    $target.style.height = `${$targetH}px`;    
-                } else {
-                    $target.style.height = `0px`;
-                }
+                ( ($target.offsetHeight) == 0 ) ? $target.style.height = `${$targetH}px` : $target.style.height = `0px`;
             };
             $console.addEventListener('click',viewConsole);
         })(document);
