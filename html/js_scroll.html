@@ -57,6 +57,7 @@
                 </div>
                 <button type="button" class="scroll-to-btn scroll-to-top">Scroll Top</button>
                 <button type="button" class="scroll-to-btn scroll-to-bt">Scroll Bt</button>
+                <div class="scroll-progress-bar"><span></span></div>
             </div>
         </main>
     </div>
@@ -104,10 +105,13 @@
 
                     scrolling = $main_st;
 
-                    console.log($window_st, $window_sl);
-                    console.log($main_st, $main_sl);
+                    let mainH = $main_st / ($main.scrollHeight - $main.clientHeight) * 100 - 100;
+                    a.querySelector('.scroll-progress-bar span').style.transform = `translateX(${mainH}%)`;
 
-                    console.log($wct);
+                    // console.log($window_st, $window_sl);
+                    // console.log($main_st, $main_sl);
+
+                    // console.log($wct);
                 });
             }
             fnScroll();
