@@ -321,7 +321,7 @@ body {
             height:300px;
         }
     }
-    .bg-copy-box {
+    .js-bgCopyBox {
         display:flex;
         flex-wrap:wrap;
         flex-direction:row;
@@ -370,7 +370,7 @@ body {
             margin:0 auto;
         }
     }
-    .onePage {
+    .js-onePage {
         > div  {
             width:100%;
             height:300px;
@@ -415,7 +415,7 @@ body {
             }
         }
     }
-    .find-string {
+    .js-findString {
         ul {
             display:flex;
             flex-wrap:wrap;
@@ -476,7 +476,7 @@ body {
             }
         }
     }
-    .get-date {
+    .js-getDate {
         dl {
             margin:0 auto 20px;
             width:200px;
@@ -527,6 +527,35 @@ body {
                     }
                 }
             }
+        }
+    }
+    .js-scroll {
+        .scroll-to-btn {
+            display:block;
+            position:fixed;
+            bottom:-100px;
+            left:50%;
+            transform:translateX(-50%);
+            width:80px;
+            height:30px;
+            font-size:12px;
+            background:#fff;
+            border:1px solid #333;
+            opacity:0;
+            transition:0.3s;
+            &.view {
+                bottom:65px;
+                opacity:1;
+            }
+            &:hover {
+                background:#333;
+                color:#fff;
+            }
+        }
+        .scroll-box {
+            position:relative;
+            width:100%;
+            height:650px;
         }
     }
     .useFulSite {
@@ -674,7 +703,7 @@ body {
                 height:200px;
             }
         }
-        .bg-copy-box {
+        .js-bgCopyBox {
             .bg-copy-unit {
                 width:21%;
                 height:0;

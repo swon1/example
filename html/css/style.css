@@ -316,46 +316,46 @@ body {
   width: 650px;
   height: 300px;
 }
-#main .bg-copy-box {
+#main .js-bgCopyBox {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
 }
-#main .bg-copy-box .bg-copy-unit {
+#main .js-bgCopyBox .bg-copy-unit {
   position: relative;
   font-size: 0;
   width: 120px;
   height: 120px;
 }
-#main .bg-copy-box .bg-copy-unit img {
+#main .js-bgCopyBox .bg-copy-unit img {
   width: 100%;
 }
-#main .bg-copy-box .bg-copy-unit .bg-copy-btn {
+#main .js-bgCopyBox .bg-copy-unit .bg-copy-btn {
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-#main .bg-copy-box .bg-copy-unit:nth-child(1) {
+#main .js-bgCopyBox .bg-copy-unit:nth-child(1) {
   background: url("../images/bg01.jpg") no-repeat center/100% auto;
 }
-#main .bg-copy-box .bg-copy-unit:nth-child(2) {
+#main .js-bgCopyBox .bg-copy-unit:nth-child(2) {
   background: url("../images/bg02.jpg") no-repeat center/100% auto;
 }
-#main .bg-copy-box .bg-copy-unit:nth-child(3) {
+#main .js-bgCopyBox .bg-copy-unit:nth-child(3) {
   background: url("../images/bg03.jpg") no-repeat center/100% auto;
 }
-#main .bg-copy-box .bg-copy-unit:nth-child(4) {
+#main .js-bgCopyBox .bg-copy-unit:nth-child(4) {
   background: url("../images/bg04.jpg") no-repeat center/100% auto;
 }
-#main .bg-copy-box .bg-copy-place {
+#main .js-bgCopyBox .bg-copy-place {
   display: block;
   width: 120px;
   height: 120px;
   margin: 0 auto 50px;
 }
-#main .bg-copy-box .bg-copy-text {
+#main .js-bgCopyBox .bg-copy-text {
   width: 100%;
   max-width: 500px;
   height: 40px;
@@ -365,16 +365,16 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.33);
   margin: 0 auto;
 }
-#main .onePage > div {
+#main .js-onePage > div {
   width: 100%;
   height: 300px;
   border: 1px solid rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
-#main .onePage > div.pageA {
+#main .js-onePage > div.pageA {
   position: relative;
 }
-#main .onePage > div.pageA .page-unit {
+#main .js-onePage > div.pageA .page-unit {
   position: absolute;
   top: 70%;
   left: 0;
@@ -382,20 +382,20 @@ body {
   height: 100%;
   transition: 0.65s cubic-bezier(0.45, 0, 0.55, 1);
 }
-#main .onePage .page-nav {
+#main .js-onePage .page-nav {
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
   z-index: 10;
 }
-#main .onePage .page-nav li {
+#main .js-onePage .page-nav li {
   position: relative;
   width: 10px;
   height: 10px;
   margin: 10px 0;
 }
-#main .onePage .page-nav li button {
+#main .js-onePage .page-nav li button {
   display: block;
   width: 100%;
   height: 100%;
@@ -403,10 +403,10 @@ body {
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.33);
 }
-#main .onePage .page-nav li.active button {
+#main .js-onePage .page-nav li.active button {
   background-color: rgb(0, 0, 0);
 }
-#main .find-string ul {
+#main .js-findString ul {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -414,7 +414,7 @@ body {
   align-items: flex-start;
   margin-bottom: 50px;
 }
-#main .find-string ul li {
+#main .js-findString ul li {
   width: 60px;
   height: 40px;
   font-size: 11px;
@@ -424,66 +424,66 @@ body {
   margin: 0 10px;
   transition: 0.33s;
 }
-#main .find-string ul.from li {
+#main .js-findString ul.from li {
   color: #222;
   background-color: #fff;
   border: 1px solid #333;
   cursor: pointer;
 }
-#main .find-string ul.to li:nth-child(1) {
+#main .js-findString ul.to li:nth-child(1) {
   background-color: rgba(255, 0, 0, 0);
 }
-#main .find-string ul.to li:nth-child(1).on {
+#main .js-findString ul.to li:nth-child(1).on {
   color: #fff;
   background-color: rgb(255, 0, 0);
 }
-#main .find-string ul.to li:nth-child(2) {
+#main .js-findString ul.to li:nth-child(2) {
   background-color: rgba(0, 0, 255, 0);
 }
-#main .find-string ul.to li:nth-child(2).on {
+#main .js-findString ul.to li:nth-child(2).on {
   color: #fff;
   background-color: rgb(0, 0, 255);
 }
-#main .find-string ul.to li:nth-child(3) {
+#main .js-findString ul.to li:nth-child(3) {
   background-color: rgba(0, 0, 0, 0);
 }
-#main .find-string ul.to li:nth-child(3).on {
+#main .js-findString ul.to li:nth-child(3).on {
   color: #fff;
   background-color: rgb(0, 0, 0);
 }
-#main .find-string ul.to li:nth-child(4) {
+#main .js-findString ul.to li:nth-child(4) {
   background-color: rgba(125, 125, 125, 0);
 }
-#main .find-string ul.to li:nth-child(4).on {
+#main .js-findString ul.to li:nth-child(4).on {
   color: #fff;
   background-color: rgb(125, 125, 125);
 }
-#main .get-date dl {
+#main .js-getDate dl {
   margin: 0 auto 20px;
   width: 200px;
   font-size: 0;
 }
-#main .get-date dl dt {
+#main .js-getDate dl dt {
   display: inline-block;
   border: 1px solid #333;
   vertical-align: middle;
 }
-#main .get-date dl dt button {
+#main .js-getDate dl dt button {
   display: block;
   width: 70px;
   height: 30px;
   font-size: 12px;
   transition: 0.35s;
 }
-#main .get-date dl dt button:hover {
+#main .js-getDate dl dt button:hover {
   background-color: #222;
   color: #fff;
 }
-#main .get-date dl dd {
+#main .js-getDate dl dd {
   display: inline-block;
   vertical-align: middle;
 }
-#main .get-date dl dd p {
+#main .js-getDate dl dd p {
   width: 120px;
   height: 30px;
   font-size: 12px;
@@ -491,23 +491,50 @@ body {
   line-height: 30px;
   text-align: right;
 }
-#main .get-date dl.full-date {
+#main .js-getDate dl.full-date {
   margin-top: 50px;
 }
-#main .get-date dl.full-date dt {
+#main .js-getDate dl.full-date dt {
   display: block;
 }
-#main .get-date dl.full-date dt button {
+#main .js-getDate dl.full-date dt button {
   width: 100%;
 }
-#main .get-date dl.full-date dd {
+#main .js-getDate dl.full-date dd {
   display: block;
 }
-#main .get-date dl.full-date dd p {
+#main .js-getDate dl.full-date dd p {
   width: 100%;
   height: 50px;
   line-height: 50px;
   text-align: center;
+}
+#main .js-scroll .scroll-to-btn {
+  display: block;
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 30px;
+  font-size: 12px;
+  background: #fff;
+  border: 1px solid #333;
+  opacity: 0;
+  transition: 0.3s;
+}
+#main .js-scroll .scroll-to-btn.view {
+  bottom: 65px;
+  opacity: 1;
+}
+#main .js-scroll .scroll-to-btn:hover {
+  background: #333;
+  color: #fff;
+}
+#main .js-scroll .scroll-box {
+  position: relative;
+  width: 100%;
+  height: 650px;
 }
 #main .useFulSite > div {
   position: relative;
@@ -646,17 +673,17 @@ body {
     width: 95%;
     height: 200px;
   }
-  #main .bg-copy-box .bg-copy-unit {
+  #main .js-bgCopyBox .bg-copy-unit {
     width: 21%;
     height: 0;
     padding-top: 21%;
   }
-  #main .bg-copy-box .bg-copy-place {
+  #main .js-bgCopyBox .bg-copy-place {
     width: 100px;
     height: 100px;
     margin: 10% auto 7.5%;
   }
-  #main .bg-copy-box .bg-copy-text {
+  #main .js-bgCopyBox .bg-copy-text {
     width: 95%;
     height: 40px;
     line-height: 39px;

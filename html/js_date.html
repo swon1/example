@@ -48,7 +48,7 @@
                 </div>
             </div>
             <p class="content-text optionT"><strong>■ EX</strong></p>
-            <div class="content-box get-date">
+            <div class="content-box js-getDate">
                 <dl class="year">
                     <dt><button type="button">Year</button></dt>
                     <dd><p></p></dd>
@@ -114,29 +114,29 @@
                 console.log(dateString);
 
                 if ( type == 'Year' ) {
-                    a.querySelector('.get-date .year dd p').innerText = `- ${year} 년`;
+                    a.querySelector('.js-getDate .year dd p').innerText = `- ${year} 년`;
                 }
                 if ( type == 'Month' ) {
-                    a.querySelector('.get-date .month dd p').innerText = `- ${month} 월`;
+                    a.querySelector('.js-getDate .month dd p').innerText = `- ${month} 월`;
                 }
                 if ( type == 'Day' ) {
-                    a.querySelector('.get-date .day dd p').innerText = `- ${day} 일`;
+                    a.querySelector('.js-getDate .day dd p').innerText = `- ${day} 일`;
                 }
                 if ( type == 'Hour' ) {
-                    a.querySelector('.get-date .hour dd p').innerText = `- ${hour} 시`;
+                    a.querySelector('.js-getDate .hour dd p').innerText = `- ${hour} 시`;
                 }
                 if ( type == 'Minute' ) {
-                    a.querySelector('.get-date .minute dd p').innerText = `- ${min} 분`;
+                    a.querySelector('.js-getDate .minute dd p').innerText = `- ${min} 분`;
                 }
                 if ( type == 'Second' ) {
-                    a.querySelector('.get-date .second dd p').innerText = `- ${sec} 초`;
+                    a.querySelector('.js-getDate .second dd p').innerText = `- ${sec} 초`;
                 }
                 if ( type == 'Full Date' ) {
-                    a.querySelector('.get-date .full-date dd p').innerText = `${dateString}`;
+                    a.querySelector('.js-getDate .full-date dd p').innerText = `${dateString}`;
                 }
             };
 
-            let $el = a.querySelectorAll('.get-date dl button');
+            let $el = a.querySelectorAll('.js-getDate dl button');
             [].forEach.call( $el, ( el )  => {
                 el.addEventListener('click', ( e ) => {
                     let $dateType = (e.target).innerText;

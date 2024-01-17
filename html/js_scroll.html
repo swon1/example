@@ -49,8 +49,14 @@
             </div>
             <p class="content-text optionT"><strong>■ EX</strong></p>
             <div class="content-box js-scroll">
-                <div style="height:600px;"></div>
-                <div style="height:600px;"></div>
+                <div class="scroll-box box01">
+                    <p class="scroll-date window-st"></p>
+                    <p class="scroll-date main-st"></p>
+                    <p class="scroll-date query-st"></p>
+                    <p class="scroll-date main-check"></p>
+                </div>
+                <button type="button" class="scroll-to-btn scroll-to-top">Scroll Top</button>
+                <button type="button" class="scroll-to-btn scroll-to-bt">Scroll Bt</button>
             </div>
         </main>
     </div>
@@ -68,14 +74,84 @@
             $console.addEventListener('click',viewConsole);
 
 
-            let $main = a.querySelector('#main');
-            $main.addEventListener('scroll', ( e ) => {
+            const fnScroll = () => {
+                let $main = a.querySelector('#main');
                 
-                let $wct = $('#main').scrollTop();
+                let scrolling = 0;
 
-                console.log($wct);
+                $main.addEventListener('scroll', ( e ) => {                
+                    let $window_st = (window).pageXOffset;
+                    let $window_sl = (window).pageYOffset;
+                    let $main_st = ($main).scrollTop;
+                    let $main_sl = ($main).scrollLeft;
+
+                    let $wct = $('#main').scrollTop();
+
+                    a.querySelector('.window-st').innerText = `Window St : ${$window_st}`;
+                    a.querySelector('.main-st').innerText = `Main St : ${$main_st}`;
+                    $('.query-st').text(`jQuery use Main St : ${$wct}`);
+
+                    if ( scrolling > $main_st ) {
+                        a.querySelector('.main-check').innerText = 'Up Scroll';
+                        a.querySelector('.scroll-to-bt').classList.add('view');
+                        a.querySelector('.scroll-to-top').classList.remove('view');
+                    } else {
+                        a.querySelector('.main-check').innerText = 'Down Scroll';
+                        a.querySelector('.scroll-to-top').classList.add('view');
+                        a.querySelector('.scroll-to-bt').classList.remove('view');
+                    }
+                    ( scrolling > $main_st ) ? console.log('Up Scroll') : console.log('Down Scroll');
+
+                    scrolling = $main_st;
+
+                    console.log($window_st, $window_sl);
+                    console.log($main_st, $main_sl);
+
+                    console.log($wct);
+                });
+            }
+            fnScroll();
+
+
+            const fnRect = () => {
+                let $scrollBox = a.querySelectorAll('.scroll-box');
+                let box1_rect = $scrollBox[0].getBoundingClientRect();
+
+                const rectCheck = ( t, b, l, r, w, h) => {
+                    console.log(t); // top
+                    console.log(b); // bottom
+                    console.log(l); // left
+                    console.log(r); // right
+                    console.log(w); // width
+                    console.log(h); // height
+                };
+
+                console.log(box1_rect);
+
+                rectCheck( box1_rect.top, box1_rect.bottom, box1_rect.left, box1_rect.right, box1_rect.width, box1_rect.height );
+            }
+            // fnRect();
+
+
+            const fnViewPort = () => {
+                let $window_w = (window).innerWidth;
+                let $window_h = (window).innerHeight;
+                let $main_w = a.querySelector('#main').clientWidth;
+                let $main_h = a.querySelector('#main').clientHeight;
+
+                console.log($window_w, $window_h);
+                console.log($main_w, $main_h);
+            }
+            fnViewPort();
+
+
+            a.querySelector('.scroll-to-top').addEventListener('click', () => {
+                a.querySelector('#main').scrollTo(0,0);
             });
-            
+            a.querySelector('.scroll-to-bt').addEventListener('click', () => {
+                a.querySelector('#main').scrollTo(0,9000);
+            });
+
         })(document);
     </script>
 
