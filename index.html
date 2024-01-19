@@ -33,6 +33,12 @@
         </header>
         <main id="main" class="box100">
             <section id="section" class="box100">
+                <aside id="contentNav">
+                    <ul>
+                        <li><button type="button" data-type="etc" class="nav-etc">etc.</button></li>
+                        <li><button type="button" data-type="js" class="nav-js">JS</button></li>
+                    </ul>
+                </aside>
                 <div class="section-inner">
                     <article class="content"> <!-- :: Site List :: -->
                         <div class="content-inner">
@@ -173,25 +179,7 @@
         </footer>
     </div>
     <script type="text/javascript">
-        (function(a){
-            let $reload = a.querySelector('.btn-reload');
-            $reload.addEventListener('click', () => {
-                window.location.reload();
-            });
-
-            let conBox = a.querySelectorAll('.content .content-inner');
-            [].forEach.call( conBox, ( el ) => {
-                el.addEventListener('click',function(e){
-                    let $this = this.classList.contains('before');
-                    if ( !($this) ) {
-                        return false;
-                    } else {
-                        e.preventDefault();
-                        alert('아직 작업 전입니다.');
-                    }
-                });
-            });
-        })(document);
+        mainFn( document );
     </script>
 </body>
 
