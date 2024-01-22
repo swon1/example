@@ -173,9 +173,9 @@ body {
     .content-list {
         width:100%;
         max-width:650px;
-        margin: 0 auto;
+        margin:0 auto;
         .content-unit {
-            font: {
+            font:{
                 size:14px;
                 family:'Consolas','Nanum Myeongjo';
             }
@@ -570,6 +570,7 @@ body {
                 height:100%;
                 background:#333;
                 transform:translateX(-100%);
+                transition:0.1s;
             }
         }
     }
@@ -743,6 +744,22 @@ body {
                         width:90%;
                     }
                 }
+            }
+        }
+        .js-scroll {
+            .scroll-to-btn {
+                width:70px;
+                height:26px;
+                font-size:10px;
+                &.view {
+                    bottom:30px;
+                }
+            }
+            .scroll-progress-bar {
+                bottom:6px;
+                left:1.1%;
+                width:97.8%;
+                height:4px;
             }
         }
     }

@@ -550,6 +550,7 @@ body {
   height: 100%;
   background: #333;
   transform: translateX(-100%);
+  transition: 0.1s;
 }
 #main .useFulSite > div {
   position: relative;
@@ -706,6 +707,20 @@ body {
   }
   #main .useFulSite > div ul li {
     width: 90%;
+  }
+  #main .js-scroll .scroll-to-btn {
+    width: 70px;
+    height: 26px;
+    font-size: 10px;
+  }
+  #main .js-scroll .scroll-to-btn.view {
+    bottom: 30px;
+  }
+  #main .js-scroll .scroll-progress-bar {
+    bottom: 6px;
+    left: 1.1%;
+    width: 97.8%;
+    height: 4px;
   }
 }
 
