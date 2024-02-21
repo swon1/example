@@ -6,7 +6,7 @@
 
 #### ▪ 웹 전체
 
-- [MDN](https://developer.mozilla.org/ko/){:target="_blank"} - 웹 개발을 위한 문서 저장소
+- [MDN](https://developer.mozilla.org/ko/){: target="_blank"} - 웹 개발을 위한 문서 저장소
 - [ZeroCho](https://www.zerocho.com/) - 프론트 참고 및 공부 / 강의 다수 / 웹 개발 지식 다수
 - [남인식 Lab.](https://lab.naminsik.com/) - 프론트 참고 및 공부 / 다방면
 - [Jeongah Story](https://jeongah-story.tistory.com/) - CSS 래퍼런스 및 Js 참고
