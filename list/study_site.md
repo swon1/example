@@ -42,6 +42,7 @@
 
 #### ▪ FE
 
+- [FE 입문자 로드맵](https://github.com/self-taught-fe-dev/fe-roadmap?tab=readme-ov-file)
 - [FE 커리큘럼](https://velog.io/@teo/2021-%EC%9B%B9-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B3%B5%EB%B6%80%EB%B2%95-%EC%9E%85%EB%AC%B8%EC%9E%90%ED%8E%B8-%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC)
 - [FE 면접 질문 중요도 모음](https://github.com/Esoolgnah/Frontend-Interview-Questions?tab=readme-ov-file) - 공부하기에도 괜찮은듯
 - [FE 면접 질문 모음 2](https://xiubindev.tistory.com/119)
