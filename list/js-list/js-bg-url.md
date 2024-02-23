@@ -52,7 +52,7 @@ let $el = {
 
 'background-images' 값 자체를 가져오는건 'getPropertyValue' 를 활용하면 충분하지만
 <br>
-url('')부분을 제외한 순수 경로 'ex.https://www.google.com' 를 가져오기 위해 replace를 사용한다.
+url('')부분을 제외한 순수 경로 (ex.https://www.google.com) 를 가져오기 위해 replace를 사용한다.
 
 <br>
 
