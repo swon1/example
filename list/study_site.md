@@ -11,6 +11,7 @@
 - [남인식 Lab.](https://lab.naminsik.com/) - 프론트 참고 및 공부 / 다방면
 - [Jeongah Story](https://jeongah-story.tistory.com/) - CSS 래퍼런스 및 Js 참고
 - [실무에서 직접 경험한 것들](http://cjh7652.dothome.co.kr/sRoom/room/study.html) - 퍼블리셔 실무 지식이 담겨있는 사이트
+- [퍼블리셔 커리큘럼](https://velog.io/@o_han/%EC%A7%81%EC%A0%91-%EA%B0%80%EB%A5%B4%EC%B9%9C-%ED%8D%BC%EB%B8%94%EB%A6%AC%EC%85%94-%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC) - 적당히 참고만 하기 좋음
 
 <br>
 
