@@ -18,7 +18,7 @@
 
 <br>
 
-```
+```javascript
 let $el = {
     btn : a.querySelectorAll('.bg-copy-btn'),
 };
